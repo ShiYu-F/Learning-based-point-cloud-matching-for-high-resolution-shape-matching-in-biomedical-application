@@ -12,7 +12,7 @@ This repository contains code and data pipelines for aligning longitudinal intra
 
 Dental professionals increasingly rely on intraoral 3D scans to monitor and plan treatment. However, accurate alignment of scans over time remains a challenge, especially in the presence of tooth movement or wear changes.
 
-This project benchmarks various rigid registration techniques, from classical methods like Iterative Closest Point (ICP) to modern deep learning approaches such as PointNet and Graph Convolutional Networks (GCNs), to support precise and automated dental scan comparison.
+This project benchmarks various rigid registration techniques, from classical methods like Procrustes to learning-based approaches such as MLP, PointNet and Graph Convolutional Networks (GCNs), to support precise and automated dental scan comparison.
 
 ---
 
@@ -27,11 +27,32 @@ This file includes manually labeled landmark positions for each scan, which are 
 
 ---
 ## Model Usage
+All dataset files should be unzipped and placed in the same path
 
-### MLP model
+### MLP-based pipeline
+A fully connected network that takes concatenated landmark pairs as input and predicts rigid transformation.
+**Usage:**
+```bash
+# Example (assuming unzipped MLP.zip)
+cd MLP/
+jupyter notebook MLP.ipynb
+```
 
-### GCN
-
+### GCN-based pipeline
+A Graph Convolutional Network using neighborhood structure of landmarks to predict rigid transformation.
+**Usage:**
+```bash
+# Example (assuming unzipped GCN.zip)
+cd GCN/
+jupyter notebook GCN.ipynb
+```
+### PointNet-based pipeline
+A PointNet++-style network that directly learns point-level features for registration.
+**Usage:**
+```bash
+# Example 
+jupyter notebook PointNet_based.ipynb
+```
 
 
 ```bash
