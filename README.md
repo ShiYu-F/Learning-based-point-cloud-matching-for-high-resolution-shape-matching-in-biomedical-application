@@ -15,8 +15,6 @@ Dental professionals increasingly rely on intraoral 3D scans to monitor and plan
 This project benchmarks various rigid registration techniques, from classical methods like Procrustes to learning-based approaches such as MLP, PointNet and Graph Convolutional Networks (GCNs), to support precise and automated dental scan comparison.
 
 ---
-
----
 ## Dataset
 
 **pointcloud_raw/**  
@@ -68,6 +66,7 @@ A PointNet++-style network that directly learns point-level features for registr
 # Example 
 jupyter notebook PointNet_based.ipynb
 ```
+---
 
 ## Setup
 ```bash
