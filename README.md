@@ -2,16 +2,9 @@
 ## Learning-based point cloud matching for high resolution shape matching in biomedical application
 This repository contains code and data pipelines for aligning longitudinal intraoral 3D scans using classical and learning-based point cloud registration methods. The goal is to enable accurate, efficient, and clinically interpretable tracking of dental morphological changes such as tooth wear, orthodontic movement, and prosthetic adaptation.
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Methodology](#methodology)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Project Overview](#project_overview)
 - [Dataset](#dataset)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Results](#results)
-- [Contributors](#contributors)
-- [License](#license)
+- [Model Usage](#model_usage)
 
 ---
 
@@ -23,37 +16,23 @@ This project benchmarks various rigid registration techniques, from classical me
 
 ---
 
-## Features
-- Semi-automated landmark annotation workflow (via Blender)
-- Baseline registration using Procrustes alignment
-- Classical ICP-based registration
-- Learning-based registration (MLP, PointNet, GCN, etc.)
-- Evaluation via mesh-based Chamfer Distance and MSE
-- Modular, extensible code structure for custom method integration
+---
+## Dataset
+
+**pointcloud_raw/**  
+Each sample folder (A1–A37) contains two point cloud scans of a patient’s teeth collected in different years. These scans are used as input for rigid registration algorithms.
+
+**landmarks.zip**  
+This file includes manually labeled landmark positions for each scan, which are used for training, evaluation, and baseline comparison with classical methods such as Procrustes analysis. 
 
 ---
+## Model Usage
 
-## Methodology
+### MLP model
 
-### Registration Pipeline
-1. **Annotation Strategy Development**  
-   Landmark subsets selected based on anatomical relevance and labeling efficiency.
+### GCN
 
-2. **Data Preparation**  
-   Longitudinal intraoral scans labeled using Blender and processed into point clouds or meshes.
 
-3. **Registration Methods**
-   - **ICP** (classical rigid alignment)
-   - **Procrustes** (landmark-based baseline)
-   - **MLP** / **PointNet** / **GCN** (deep learning-based models)
-
-4. **Evaluation Metrics**
-   - **Mean Squared Error (MSE)**
-   - **Chamfer Distance (CD)**
-
----
-
-## Installation
 
 ```bash
 git clone https://github.com/your-username/intraoral-3d-registration.git
