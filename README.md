@@ -56,9 +56,8 @@ jupyter notebook PointNet_based.ipynb
 
 
 ```bash
-git clone https://github.com/your-username/intraoral-3d-registration.git
-cd intraoral-3d-registration
-conda create -n dentalreg python=3.8
+git clone https://github.com/your-username/intraoral-3d-registration.git](https://github.com/ShiYu-F/LearningPointCloudReg-Bio3D.git
+cd LearningPointCloudReg-Bio3D
+conda create -n dentalreg python=3.10
 conda activate dentalreg
-pip install -r requirements.txt
 ```
