@@ -18,9 +18,11 @@ This project benchmarks various rigid registration techniques, from classical me
 ## Dataset
 
 **pointcloud_raw/**  
+
 Each sample folder (A1–A37) contains two point cloud scans of a patient’s teeth collected in different years. These scans are used as input for rigid registration algorithms.
 
 **landmarks.zip**  
+
 This file includes manually labeled landmark positions for each scan, which are used for training, evaluation, and baseline comparison with classical methods such as Procrustes analysis. 
 
 ---
@@ -31,12 +33,15 @@ All dataset files should be unzipped and placed in the same path
 This module implements classical rigid point cloud alignment using Procrustes analysis based on manually annotated landmarks. It serves as a baseline for comparison against learning-based models.
 
 **procrustes/Extract_rigid_transformation_withoutS.py**
+
 A utility script to compute rigid transformation (rotation + translation, without scale) between two sets of landmarks.
 
 **procrustes/Teeth_Procrusters_and_Evaluation_withoutS.ipynb**
+
 A complete notebook that performs Procrustes-based alignment and evaluates registration performance using metrics such as MSE and Chamfer distance.
 
 **Usage:**
+
 ```bash
 cd procrustes/
 jupyter notebook Teeth_Procrusters_and_Evaluation_withoutS.ipynb
@@ -45,6 +50,7 @@ jupyter notebook Teeth_Procrusters_and_Evaluation_withoutS.ipynb
 ### MLP-based pipeline
 A fully connected network that takes concatenated landmark pairs as input and predicts rigid transformation.
 **Usage:**
+
 ```bash
 # Example (assuming unzipped MLP.zip)
 cd MLP/
@@ -54,6 +60,7 @@ jupyter notebook MLP.ipynb
 ### GCN-based pipeline
 A Graph Convolutional Network using neighborhood structure of landmarks to predict rigid transformation.
 **Usage:**
+
 ```bash
 # Example (assuming unzipped GCN.zip)
 cd GCN/
@@ -62,6 +69,7 @@ jupyter notebook GCN.ipynb
 ### PointNet-based pipeline
 A PointNet++-style network that directly learns point-level features for registration.
 **Usage:**
+
 ```bash
 # Example 
 jupyter notebook PointNet_based.ipynb
