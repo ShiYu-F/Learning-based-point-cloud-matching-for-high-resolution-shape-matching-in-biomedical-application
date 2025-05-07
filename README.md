@@ -61,3 +61,4 @@ cd intraoral-3d-registration
 conda create -n dentalreg python=3.8
 conda activate dentalreg
 pip install -r requirements.txt
+```
