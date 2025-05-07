@@ -31,6 +31,7 @@ All dataset files should be unzipped and placed in the same path
 
 ## Procrustes-based pipeline(Non learning-based model)
 This module implements classical rigid point cloud alignment using Procrustes analysis based on manually annotated landmarks. It serves as a baseline for comparison against learning-based models.
+
 **procrustes/Extract_rigid_transformation_withoutS.py**
 A utility script to compute rigid transformation (rotation + translation, without scale) between two sets of landmarks.
 
