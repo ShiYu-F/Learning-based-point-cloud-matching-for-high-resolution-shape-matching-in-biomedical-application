@@ -29,6 +29,20 @@ This file includes manually labeled landmark positions for each scan, which are 
 ## Model Usage
 All dataset files should be unzipped and placed in the same path
 
+## Procrustes-based pipeline(Non learning-based model)
+This module implements classical rigid point cloud alignment using Procrustes analysis based on manually annotated landmarks. It serves as a baseline for comparison against learning-based models.
+**procrustes/Extract_rigid_transformation_withoutS.py**
+A utility script to compute rigid transformation (rotation + translation, without scale) between two sets of landmarks.
+
+**procrustes/Teeth_Procrusters_and_Evaluation_withoutS.ipynb**
+A complete notebook that performs Procrustes-based alignment and evaluates registration performance using metrics such as MSE and Chamfer distance.
+
+**Usage:**
+```bash
+cd procrustes/
+jupyter notebook Teeth_Procrusters_and_Evaluation_withoutS.ipynb
+```
+
 ### MLP-based pipeline
 A fully connected network that takes concatenated landmark pairs as input and predicts rigid transformation.
 **Usage:**
@@ -54,7 +68,7 @@ A PointNet++-style network that directly learns point-level features for registr
 jupyter notebook PointNet_based.ipynb
 ```
 
-
+## Setup
 ```bash
 git clone https://github.com/your-username/intraoral-3d-registration.git](https://github.com/ShiYu-F/LearningPointCloudReg-Bio3D.git
 cd LearningPointCloudReg-Bio3D
